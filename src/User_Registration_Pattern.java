@@ -52,6 +52,9 @@ public class User_Registration_Pattern {
         }
         return isValidLastName;
     }
+    /*
+        validateEmailid method is validating the last name
+        */
     public boolean validateEmailid(String EmailId) {
         boolean isValidEmail = EmailId.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$");
         if (isValidEmail) {
