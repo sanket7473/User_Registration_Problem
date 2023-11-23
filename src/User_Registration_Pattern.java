@@ -6,6 +6,7 @@ import java.util.regex.*;
  *
  * @param FirstName is a first name passed to the validateFirstName function to check validation
  * @param lastName  is a last name passed to the validateLastName function to check validation
+ * @param email  is a email id to validateEmail function
  * @return isvalid is will true or false if conditions are true or false
  */
 public class User_Registration_Pattern {
@@ -18,9 +19,12 @@ public class User_Registration_Pattern {
         String Name = sc.next();
         System.out.println("Enter a last name");
         String lastName = sc.next();
+        System.out.println("Enter a email Id");
+        String email = sc.next();
         User_Registration_Pattern urp = new User_Registration_Pattern();
         urp.validateFirstName(Name);
         urp.validateLastName(lastName);
+        urp.validateEmailid(email);
     }
 
     /*
@@ -47,5 +51,16 @@ public class User_Registration_Pattern {
             System.out.println("Last name is not valid ");
         }
         return isValidLastName;
+    }
+    public boolean validateEmailid(String EmailId) {
+        boolean isValidEmail = EmailId.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$");
+        if (isValidEmail) {
+            System.out.println("Email name is valid");
+        }
+        else
+        {
+            System.out.println("Email name is not valid ");
+        }
+        return isValidEmail;
     }
 }
