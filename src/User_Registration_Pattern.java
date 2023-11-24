@@ -3,17 +3,6 @@ import java.util.regex.*;
 
 /**
  * User_Registration_Pattern class is checking a validation for user registration
- *
- * @param FirstName is a first name passed to the validateFirstName function to check validation
- * @param lastName  is a last name passed to the validateLastName function to check validation
- * @param email  is a email id to validateEmail function
- * @param mobNo is a parameter for  validateMobileno  to check validation for mobile number
- * @param password is a parameter for the validatePassword to check validation for password
- * @return isvalid is will true or false if conditions are true or false
- * @return isValidLastName is will true or false if conditions are true or false
- * @return isValidEmail will true or false if conditions are true or false
- * @return isValidMobileNumber will true or false if condition are true or false
- * @return validatePassword will true or false if condition are true or false
  */
 public class User_Registration_Pattern {
 
@@ -38,11 +27,12 @@ public class User_Registration_Pattern {
         String validatepassword = sc.next();
         urp.validatePassword(validatepassword);
 
-
     }
 
     /*
-    validateFirstName method is validating the first name
+    *validateFirstName method is validating the first name
+    * @param FirstName is a first name passed to the validateFirstName function to check validation
+    * @return isvalid is will true or false if conditions are true or false
     */
     public boolean validateFirstName(String FirstName) {
         boolean isValid = FirstName.matches("[A-Z][a-z]{3,10}");
@@ -55,7 +45,9 @@ public class User_Registration_Pattern {
     }
 
     /*
-        validateLastName method is validating the last name
+         * validateLastName method is validating the last name
+         * @param lastName  is a last name passed to the validateLastName function to check validation
+         * @return isValidLastName is will true or false if conditions are true or false
         */
     public boolean validateLastName(String lastName) {
         boolean isValidLastName = lastName.matches("[A-Z][a-z]{3,10}");
@@ -67,7 +59,9 @@ public class User_Registration_Pattern {
         return isValidLastName;
     }
     /*
-        validateEmailid method is validating the last name
+         * validateEmailid method is validating the last name
+         * @param email  is a email id to validateEmail function
+         * @return isValidEmail will true or false if conditions are true or false
         */
     public boolean validateEmailid(String EmailId) {
         boolean isValidEmail = EmailId.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$");
@@ -81,7 +75,9 @@ public class User_Registration_Pattern {
         return isValidEmail;
     }
     /*
-       validateMobileno method is validating the mobile number
+        * validateMobileno method is validating the mobile number
+        * @param mobNo is a parameter for  validateMobileno  to check validation for mobile number
+        * @return isValidMobileNumber will true or false if condition are true or false
        */
     public boolean validateMobileno(String mobNo) {
         boolean isValidMobileNumber = mobNo.matches("^(\\+91[ ])?\\d{10}$");
@@ -95,7 +91,9 @@ public class User_Registration_Pattern {
         return isValidMobileNumber;
     }
     /*
-       validatePassword method is validating the password should have minimum 8 characters and one Upper case one number one special character
+       * validatePassword method is validating the password should have minimum 8 characters and one Upper case one number one special character
+       * @param password is a parameter for the validatePassword to check validation for password
+       * @return validatePassword will true or false if condition are true or false
        */
     public boolean validatePassword(String password) {
         boolean isValidPassword = password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
