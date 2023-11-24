@@ -21,10 +21,15 @@ public class User_Registration_Pattern {
         String lastName = sc.next();
         System.out.println("Enter a email Id");
         String email = sc.next();
+        System.out.println("Enter a mobile number");
+        String mobileNo = sc.next();
         User_Registration_Pattern urp = new User_Registration_Pattern();
         urp.validateFirstName(Name);
         urp.validateLastName(lastName);
         urp.validateEmailid(email);
+        urp.validateMobileno(mobileNo);
+
+
     }
 
     /*
@@ -65,5 +70,19 @@ public class User_Registration_Pattern {
             System.out.println("Email name is not valid ");
         }
         return isValidEmail;
+    }
+    /*
+       validateMobileno method is validating the mobile number
+       */
+    public boolean validateMobileno(String mobNo) {
+        boolean isValidMobileNumber = mobNo.matches("^(\\+91[ ])?\\d{10}$");
+        if (isValidMobileNumber) {
+            System.out.println("mobile number is valid");
+        }
+        else
+        {
+            System.out.println("mobile number is not valid ");
+        }
+        return isValidMobileNumber;
     }
 }
