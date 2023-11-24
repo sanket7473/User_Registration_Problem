@@ -95,16 +95,16 @@ public class User_Registration_Pattern {
         return isValidMobileNumber;
     }
     /*
-       validatePassword method is validating the password should have minimum 8 characters
+       validatePassword method is validating the password should have minimum 8 characters and one Upper case
        */
     public boolean validatePassword(String password) {
-        boolean isValidPassword = password.matches("[A-Za-z]{8,}");
+        boolean isValidPassword = password.matches("(?=.*[A-Z])[A-Za-z]{8,}");
         if (isValidPassword) {
             System.out.println("password is valid");
         }
         else
         {
-            System.out.println("Password has not minimum 8 characters");
+            System.out.println("Password has not minimum 8 characters and one upper case character");
         }
         return isValidPassword;
     }
