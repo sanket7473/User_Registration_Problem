@@ -7,7 +7,13 @@ import java.util.regex.*;
  * @param FirstName is a first name passed to the validateFirstName function to check validation
  * @param lastName  is a last name passed to the validateLastName function to check validation
  * @param email  is a email id to validateEmail function
+ * @param mobNo is a parameter for  validateMobileno  to check validation for mobile number
+ * @param password is a parameter for the validatePassword to check validation for password
  * @return isvalid is will true or false if conditions are true or false
+ * @return isValidLastName is will true or false if conditions are true or false
+ * @return isValidEmail will true or false if conditions are true or false
+ * @return isValidMobileNumber will true or false if condition are true or false
+ * @return validatePassword will true or false if condition are true or false
  */
 public class User_Registration_Pattern {
 
@@ -15,19 +21,22 @@ public class User_Registration_Pattern {
         System.out.println("Welcome to the User Registration problem ");
         Scanner sc = new Scanner(System.in);
         //
+        User_Registration_Pattern urp = new User_Registration_Pattern();
         System.out.println("Enter a first name");
         String Name = sc.next();
+        urp.validateFirstName(Name);
         System.out.println("Enter a last name");
         String lastName = sc.next();
+        urp.validateLastName(lastName);
         System.out.println("Enter a email Id");
         String email = sc.next();
+        urp.validateEmailid(email);
         System.out.println("Enter a mobile number");
         String mobileNo = sc.next();
-        User_Registration_Pattern urp = new User_Registration_Pattern();
-        urp.validateFirstName(Name);
-        urp.validateLastName(lastName);
-        urp.validateEmailid(email);
         urp.validateMobileno(mobileNo);
+        System.out.println("Enter a valid password");
+        String validatepassword = sc.next();
+        urp.validatePassword(validatepassword);
 
 
     }
@@ -84,5 +93,19 @@ public class User_Registration_Pattern {
             System.out.println("mobile number is not valid ");
         }
         return isValidMobileNumber;
+    }
+    /*
+       validatePassword method is validating the password should have minimum 8 characters
+       */
+    public boolean validatePassword(String password) {
+        boolean isValidPassword = password.matches("[A-Za-z]{8,}");
+        if (isValidPassword) {
+            System.out.println("password is valid");
+        }
+        else
+        {
+            System.out.println("Password has not minimum 8 characters");
+        }
+        return isValidPassword;
     }
 }
